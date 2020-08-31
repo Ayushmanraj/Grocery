@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- SECTION -->
+<div class="section">
+  <!-- container -->
+  <div class="container">
+    <!-- row -->
+    <div class="row">
+      <!-- Product main img -->
+      <div class="col-md-6 col-md-push-1">
+        <div id="product-main-img">
+          <div class="product-preview">
+
+          <img src="{{ product.Main_photo.url }}" alt=""  style="width:300px;height:300px">
+
+          </div>
+
+        </div>
+      </div>
+      <!-- /Product main img -->
+
+      <!-- Product thumb imgs -->
+
+      <!-- /Product thumb imgs -->
+
+      <!-- Product details -->
+      <div class="col-md-6">
+        <div class="product-details">
+          <h2 class="product-name">{{product.product_name}}</h2>
+          <div>
+            <br>
+            <h3 class="product-price">₹ {{product.our_price}} <del class="product-old-price">₹ {{product.mrp_price}}</del></h3>
+            <span class="product-available">In Stock</span>
+          </div>
+          <p>{{product.description}}</p>
+
+          <div class="product-options">
+            <label>
+              Size
+              <select class="input-select">
+                <option value="0">{{product.size}}</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="add-to-cart">
+            <div class="qty-label">
+              Qty
+              <div class="input-number">
+                <input type="number">
+                <span class="qty-up">+</span>
+                <span class="qty-down">-</span>
+              </div>
+            </div>
+            <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+          </div>
+
+
+
+          <ul class="product-links">
+            <li>Category:</li>
+            <li>{{product.category.first_name}} {{product.category.last_name}}</li>
+
+          </ul>
+
+        </div>
+      </div>
+      <!-- /Product details -->
+
+      <!-- Product tab -->
+      <div class="col-md-12">
+        <div id="product-tab">
+          <!-- product tab nav -->
+
+          <!-- /product tab nav -->
+
+          <!-- product tab content -->
+
+            <!-- /tab1  -->
+
+            <!-- tab2  -->
+            <div id="tab2" class="tab-pane fade in">
+              <div class="row">
+    
+              </div>
+            </div>
+
+                <!-- /Reviews -->
+
+                <!-- Review Form -->
+
+                <!-- /Review Form -->
+              </div>
+            </div>
+            <!-- /tab3  -->
+          </div>
+          <!-- /product tab content  -->
+        </div>
+      </div>
+      <!-- /product tab -->
+    </div>
+    <!-- /row -->
+  </div>
+  <!-- /container -->
+</div>
+<!-- /SECTION -->
+{% endblock %}

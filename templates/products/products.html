@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- SECTION -->
+
+
+  <div class="section">
+    <!-- container -->
+    {% include 'partials/_alert.html' %}
+    <div class="container">
+      <!-- row -->
+      <div class="row">
+        <!-- ASIDE -->
+        <div id="aside" class="col-md-3">
+          <!-- aside Widget -->
+
+
+            <div class="product-widget">
+              <div class="product-img">
+                <img src="./img/product03.png" alt="">
+              </div>
+
+            </div>
+          </div>
+          <!-- /aside Widget -->
+        </div>
+        <!-- /ASIDE -->
+
+        <!-- STORE -->
+        <div id="store" class="col-md-12">
+          <!-- store top filter -->
+
+
+          <!-- store products -->
+          <div class="row">
+            <!-- product -->
+            {% if product %}
+            {% for product in product %}
+            <div class="col-md-4 col-xs-6">
+              <div class="product">
+                <div class="product-img">
+                  <center>
+                  <img src="{{ product.Main_photo.url }}"  style="width:200px;height:200px">
+                  </center>
+                  <div class="product-label">
+
+                  </div>
+                </div>
+                <div class="product-body">
+                  <p class="product-category">{{ product.category.first_name }} {{ product.category.last_name }}</p>
+                  <h3 class="product-name"><a href="{% url 'productdetail' product.id %}">{{ product.product_name }}</a></h3>
+                  <p class="product-size">size: {{ product.size }}</p>
+              <h4 class="product-price">RS- {{ product.our_price }} <del class="product-old-price"> RS- {{ product.mrp_price }}</del></h4>
+                  <div class="product-rating">
+
+                  </div>
+                  <div class="product-btns">
+
+                  </div>
+                </div>
+                <div class="add-to-cart">
+
+                  <button data-product="{{product.id}}" data-action="add" class="add-to-cart-btn update-cart"><i class="fa fa-shopping-cart"></i> add to cart</button>
+
+                </div>
+              </div>
+            </div>
+            <!-- /product -->
+            {% endfor %}
+            {% endif%}
+          </div>
+          <!-- /store products -->
+
+          <!-- store bottom filter -->
+          <div class="store-filter clearfix">
+
+          </div>
+          <!-- /store bottom filter -->
+        </div>
+        <!-- /STORE -->
+      </div>
+      <!-- /row -->
+    </div>
+    <!-- /container -->
+
+
+  <!-- /SECTION -->
+{% endblock %}

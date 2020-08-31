@@ -1,0 +1,64 @@
+<!-- MAIN HEADER -->
+<div id="header">
+  <!-- container -->
+  <div class="container">
+    <!-- row -->
+    <div class="row">
+      <!-- LOGO -->
+      <div class="col-md-4">
+        <div class="header-logo">
+          <a href="{% url 'home' %}" class="logo">
+            <p style="font-size:40px;color:red;font-family:courier;"> Grocer's.</p><h5 style="color:white";>The Groceries Expert</h5>
+
+          </a>
+        </div>
+      </div>
+      <!-- /LOGO -->
+
+      <!-- SEARCH BAR -->
+      <div class="col-md-6">
+        <div class="header-search">
+          <form action="{% url 'search' %}">
+
+            <input class="input" type="text" placeholder="Search here" name="keywords"></input>
+            <button class="search-btn">Search</button>
+          </form>
+        </div>
+      </div>
+      <!-- /SEARCH BAR -->
+
+      <div class="col-md-2 clearfix">
+        <div class="header-ctn">
+
+
+          <!-- Cart -->
+          <div class="dropdown">
+
+            <a href="{% url 'cart' %}" class="dropdown-toggle"  >
+              <i class="fa fa-shopping-cart"></i>
+
+              <span>Your Cart</span>
+
+              <div class="qty">{{cartItems}}</div>
+            </a>
+
+          </div>
+          <!-- /Cart -->
+
+          <!-- Menu Toogle -->
+          <div class="menu-toggle">
+            <a href="#">
+              <i class="fa fa-bars"></i>
+              <span>Menu</span>
+            </a>
+          </div>
+          <!-- /Menu Toogle -->
+        </div>
+      </div>
+      <!-- /ACCOUNT -->
+    </div>
+    <!-- row -->
+  </div>
+  <!-- container -->
+</div>
+<!-- /MAIN HEADER -->

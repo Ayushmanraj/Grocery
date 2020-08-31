@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<br>
+<ul>
+  <div id="contact" class="section wb">
+    {% include 'partials/_alert.html' %}
+        <div class="container">
+           <div class="section-title row text-center">
+              <div class="col-md-8 col-md-offset-2">
+
+
+         <h3>Contact Us</h3>
+
+
+
+         <hr width="50%" style=" border:1px solid #e8aa00;">
+
+                 <p class="lead" style="color:black">welcome to Grocer's</p>
+              </div>
+              <!-- end col -->
+           </div>
+           <!-- end title -->
+           <div class="row">
+              <div class="col-lg-4 col-md-4">
+                 <div class="contant-info">
+                    <ul class="item-display-block">
+                       <li>
+                          <div class="info-shape accent-color background fs-23">
+              <a href="http://maps.google.com?q=23°59'36.2,85°21'39.3">
+                             <div class="icon"><i class="fa fa-home"></i></div>
+                          </div>
+                          <div class="info-content">
+                             <h6 class="uppercase"> Address:</h6>
+                              <p> Bansilal chowk,Hazaribag</p></a>
+                          </div>
+                       </li>
+                       <li>
+                         <br>
+
+
+                          <div class="info-shape accent-color background fs-23">
+              <a href="tel:07461970960">
+                             <div class="icon"><i class="fa fa-volume-control-phone"></i></div>
+                          </div>
+
+                          <div class="info-content">
+                             <h6 class="uppercase"> Phone No:</h6>
+                             <p> +91-7461970960
+</p></a>
+                          </div>
+                       </li>
+                       <li>
+                         <br>
+                          <div class="info-shape accent-color background fs-23">
+              <a href="#">
+                             <div class="icon"><i class="fa fa-envelope-o"></i></div>
+                          </div>
+
+                          <div class="info-content">
+                             <h6 class="uppercase"> Email Address:</h6>
+                           <p>grocers.ind@gmail.com</p></a>
+                          </div>
+                       </li>
+                    </ul>
+                 </div>
+              </div>
+              <div class="col-lg-4 col-md-2">
+                </div>
+              <div class="col-lg-4 col-md-6">
+
+<section class="contact-wrap">
+  <form method="post" action="{% url 'contact' %}" class="contact-form">
+    {% csrf_token %}
+    <div class="col-sm-6">
+      <div class="input-block">
+        <label for="">First Name</label>
+        <input type="text" class="form-control" name="firstname">
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="input-block">
+        <label for="">Last Name</label>
+        <input type="text" class="form-control" name="lastname">
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="input-block">
+        <label for="">Email</label>
+        <input type="text" class="form-control" name="email">
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="input-block">
+        <label for="">Message Subject</label>
+        <input type="text" class="form-control">
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="input-block textarea">
+        <label for="">Drop your message here</label>
+        <textarea rows="3" type="text" class="form-control" name="message"></textarea>
+      </div>
+    </div>
+    <br>
+    <div class="col-sm-12">
+      <button class="square-button">Get support</button>
+    </div>
+  </form>
+</section>
+
+<!-- follow me template -->
+<div class="made-with-love">
+  Made with
+  <i>♥</i> by
+  <a target="_blank" href="https://codepen.io/nikhil8krishnan">Ayushmanchoudhary</a>
+</div>
+</div>
+</ul>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% endblock %}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Customer details:</h1>
+    <h3>customer-name: {{customerName}}</h3>
+    <h3>customer-email: {{customerEmail}}</h3>
+    <h3>customer-address: {{customerAddress}}</h3>
+    <h3>customer-city: {{customerCity}}</h3>
+    <h3>customer-telephone: {{customerTel}}</h3>
+    <h3>customer-zipcode: {{customerZipcode}}</h3>
+
+
+    <h1>Order details:</h1>
+    <div class="order-products">
+        <div><h3>Quantity and Item</h3></div>
+      {% for item in items %}
+      <div class="order-col ">
+        <div><h3>{{item.quantity}} x  {{item.product.size}}  {{item.product.product_name}}</h3></div>
+        <div><h3>price of the item: ₹ {{item.get_total}} </h3></div>
+      </div>
+      {% endfor %}
+
+    <h3>total number of items : {{cartItems}}</h3>
+    <h3>total amount :₹ {{carttotal}}</h3>
+</html>

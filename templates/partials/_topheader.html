@@ -1,0 +1,56 @@
+{% load static %}
+<!-- TOP HEADER -->
+
+<div id="top-header">
+  <div class="container">
+    <ul class="header-links pull-left">
+      <li><a href="#"><i class="fa fa-phone"></i> +91-7461970960</a></li>
+      <li><a href="#"><i class="fa fa-envelope-o"></i> grocers.ind@gmail.com</a></li>
+      <li><a href="#"><i class="fa fa-map-marker"></i>  Bansilal chowk, Hazaribagh</a></li>
+    </ul>
+    <ul class="header-links pull-right">
+      {% if user.is_authenticated %}
+          <li {% if 'dashboard' in request.path %}
+          class="nav-item active mr-3"
+          {% else %}
+          class="nav-item  mr-3"
+          {% endif %}
+          >
+            <a class="nav-link" href="#">
+            Welcome {{ user.username }} </a>
+          </li>
+          <li class="nav-item mr-3" >
+          <a href="javascript:{document.getElementById('logout').submit()}"
+          class="nav-link">
+          <i class='fas fa-sign-out-alt'></i>logout
+          </a>
+          <form id="logout" action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="" value="">
+
+          </form>
+          </li>
+          {% else %}
+          <li {% if 'register' in request.path %}
+          class="nav-item active mr-3"
+          {% else %}
+          class="nav-item  mr-3"
+          {% endif %}
+          >
+            <a class="nav-link" href="{% url 'register' %}">
+              <i class="fa fa-plus-square"></i> Register</a>
+          </li>
+          <li {% if 'login' in request.path %}
+          class="nav-item active mr-3"
+          {% else %}
+          class="nav-item  mr-3"
+          {% endif %}
+          >
+            <a class="nav-link" href="{% url 'login' %}">
+              <i class="fa fa-user-o"></i> Login</a>
+          </li>
+          {% endif %}
+        </ul>
+  </div>
+</div>
+<!-- /TOP HEADER -->

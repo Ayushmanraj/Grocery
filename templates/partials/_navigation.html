@@ -1,0 +1,43 @@
+<!-- NAVIGATION -->
+<nav id="navigation">
+  <!-- container -->
+  <div class="container">
+    <!-- responsive-nav -->
+    <div id="responsive-nav">
+      <!-- NAV -->
+      <ul class="main-nav nav navbar-nav">
+        <li {% if '/' == request.path %}
+        class="nav-item active mr-3"
+        {% else %}
+        class="nav-item  mr-3"
+        {% endif %}
+        ><a href="{% url 'home' %}">Home</a></li>
+        <li{% if 'category' in request.path %}
+        class="nav-item active mr-3"
+        {% else %}
+        class="nav-item  mr-3"
+        {% endif %}><a href="{% url 'category' %}">Categories</a></li>
+        <li{% if 'aboutus' in request.path %}
+        class="nav-item active mr-3"
+        {% else %}
+        class="nav-item  mr-3"
+        {% endif %}><a href="{% url 'aboutus' %}">Aboutus</a></li>
+        <li{% if 'contact' in request.path %}
+        class="nav-item active mr-3"
+        {% else %}
+        class="nav-item  mr-3"
+        {% endif %}><a href="{% url 'contact' %}">Contact</a></li>
+        <li{% if 'points' in request.path %}
+        class="nav-item active mr-3"
+        {% else %}
+        class="nav-item  mr-3"
+        {% endif %}><a href="{% url 'points' %}">Points</a></li>
+
+      </ul>
+      <!-- /NAV -->
+    </div>
+    <!-- /responsive-nav -->
+  </div>
+  <!-- /container -->
+</nav>
+<!-- /NAVIGATION -->

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+		<title>GrocersIndia</title>
+
+
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    </head>
+	<body>
+		<!-- HEADER -->
+		<header>
+
+
+		</header>
+		<!-- /HEADER -->
+
+
+		<!-- SECTION -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<!-- shop -->
+          {% if category %}
+          {% for category in category %}
+
+					<div class="col-md-4 col-xs-6">
+						<div class="shop">
+							<div class="shop-img">
+								<center>
+								<img src="{{ category.Main_photo.url }}" alt="" style="width:360px;height:200px" background="white">
+							</center>
+							</div>
+							<div class="shop-body">
+								<h3>{{ category.first_name }}<br>{{ category.last_name }}</h3>
+								<a href="{% url 'product' category.id %}" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+							</div>
+						</div>
+					</div>
+					<!-- /shop -->
+          {% endfor %}
+          {% endif %}
+    		</div>
+					<!-- /shop -->
+				</div>
+				<!-- /row -->
+
+			</div>
+			<!-- /container -->
+
+		<!-- /SECTION -->
+
+	</body>
+</html>
+{% endblock %}
